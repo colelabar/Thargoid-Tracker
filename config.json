@@ -1,0 +1,31 @@
+{
+"token": "your client token",
+"prefix": "!",
+"development": {
+    "username": "database username",
+    "password": "database password",
+    "database": "database name",
+    "use_env_variable": "development",
+    "host": "your host name",
+    "port": "process.env.PORT",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "database username",
+    "password": "database password",
+    "database": "database name",
+    "use_env_variable": "test",
+    "host": "your host name",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "database username",
+    "password": "database password",
+    "database": "database name",
+    "use_env_variable": "production",
+    "host": "your host name",
+    "port": 3306,
+    "dialect": "mysql"
+  }
+}
