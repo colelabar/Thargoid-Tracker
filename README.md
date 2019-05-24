@@ -1,4 +1,4 @@
-#Discord Bot for Tracking Thargoid Kills
+# Discord Bot for Tracking Thargoid Kills
 
 *Note: This bot is not affiliated with or endorsed by Frontier Developments PLC*
 
@@ -9,12 +9,30 @@
 
 ## Usage
 To get started with the application, ensure you have the following:
-  - A forked or cloned version of this repo to link to. Clone it locally as well, so you can edit it!
-  - A Discord Application through the Developer portal linked above. You'll want to attach it to a Discord server for testing and use!
+  - A forked or cloned version of this repo to link to. Clone it locally as well, so you can edit it.
+  - A Discord Application through the Developer portal linked above. You'll also want to attach it to a Discord server for testing and use!
   - A shell Heroku app, preferably with your datastore (like JawsDB) already attached. Make sure you link your Github repo to the app.
 
 The first order of business is to get the dependencies installed. Use `npm install` to install all of the necessary dependencies into the project.
 
 Next up is to get all of your configurations initialized. Using both your Discord app and the Heroku DB configurations they provide, edit the `config.json`, `main.js`, and `package.json` files to reflect those values.
 
-Also be sure to take note of the accepted arguments used by the Bot (found in `main.js`), most namely the methods for adding systems, kills, and mission tabulations to the counts. Be sure to test out these commands prior to releasing the bot onto a server, you wouldn't want all chaos breaking out!
+## Available Commands
+The following commands are available for users to access the bot:
+- `!kills`
+  - This is the main command used for adding information to the bot. Available arguments are as follows: Note that the `< >` are placeholder delimiters and are not to be used in the command. You must use underscores for system names with spaces in them.
+    - `!kills < system_name > scout < integer >` Adds scout kills to the DB. Also accepts `scouts`.
+    - `!kills < system_name > cyclops < integer >` Adds cyclops kills to the DB.
+    - `!kills < system_name > basilisk < integer >` Adds basilisk kills to the DB.
+    - `!kills < system_name > medusa < integer >` Adds medusa kills to the DB.
+    - `!kills < system_name > hydra < integer >` Adds hydra kills to the DB.
+  - While not directly kill related, the following commands are still listed under the `!kills` command.
+    - `!kills < system_name > cz < integer >` Adds Combat Zone completions to the DB. Also accepts `CZ`.
+    - `!kills < system_name > bond < integer >` Adds Pilot Federation bonds handed-in to the DB. Also accepts `bonds`.
+    - `!kills < system_name > mission < integer >` Adds AX mission completions to the DB. Also accepts `missions`.
+
+- `!status < system_name >`
+  - This is the syntax for checking the status of a system. Returns a complete output of the information added to the system. You must use underscores for system names that have spaces in them.
+
+- `!clear < system_name >`
+  - This is the syntax for clearing a system in the DB. This removes the system and all of its information from the DB, and is currently not blocked by user permissions. You may wish to add user restrictions on this command if your user-base is not to be trusted lightly.

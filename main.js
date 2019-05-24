@@ -29,8 +29,8 @@ client.once('ready', () => {
 const Systems = sequelize.define('systems', {
 	id: {
 		type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+		autoIncrement: true,
+		primaryKey: true
 	},
 	name: {
 		type: Sequelize.STRING,
