@@ -11,7 +11,7 @@
 To get started with the application, ensure you have the following:
   - A forked or cloned version of this repo to link to. Clone it locally as well, so you can edit it.
   - A Discord Application through the Developer portal linked above. You'll also want to attach it to a Discord server for testing and use!
-  - A shell Heroku app, preferably with your datastore (like JawsDB) already attached. Make sure you link your Github repo to the app.
+  - A shell Heroku app, preferably with your datastore (like JawsDB) already attached. Make sure you link your Github repo to the app so you can update and deploy the app with ease. The included Procfile should contain the necessary requirements for the initial Heroku deployment to succeed.
 
 The first order of business is to get the dependencies installed. Use `npm install` to install all of the necessary dependencies into the project.
 
@@ -36,3 +36,6 @@ The following commands are available for users to access the bot:
 
 - `!clear < system_name >`
   - This is the syntax for clearing a system in the DB. This removes the system and all of its information from the DB, and is currently not blocked by user permissions. You may wish to add user restrictions on this command if your user-base is not to be trusted lightly.
+
+### Note
+If you have multiple bots present on your Discord server, the potential for conflicting commands exists. If this happens, you can always adjust the `!` prefix in `config.json` to something else. Just be sure to update your documentation and the codebase in `main.js` to match!
