@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "Describe your bot here",
   "main": "main.js",
-  "author": "Your name goes here, mine is Cole L Simchick",
+  "author": "Your name goes here, mine is Cole!",
+  "license": "MIT",
   "scripts": {
     "start": "node main.js"
   },
