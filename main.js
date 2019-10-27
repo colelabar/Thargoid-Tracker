@@ -57,7 +57,7 @@ client.on('message', message => {
 		const splitArgs = commandArgs.split(' ');
 		console.log(inString);
 
-		// command to log alien kills to the db based on user input
+		// command to log alien kills to the db based on user input, broken down by type
 		if (command === 'kills') {
 			// scout settings
 			if (inString.match(/[Ss]cout:\s([\d]+)/g) != null) {
@@ -159,6 +159,7 @@ client.on('message', message => {
 			const mis = parseInt(missionNum) + parseInt(missionsNum);
 
 			try {
+				// find and update a system record, or create a new one
 				Systems.sync().then(function() {
 					Systems.findOne({ where: {name: systemName} }).then(function(system) {
 						if(!system) {
